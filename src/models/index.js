@@ -20,6 +20,8 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.images = require("./image.model.js")(sequelize, Sequelize);
-db.products = require('./product.model')(sequelize, DataTypes)
+db.products = require('./product.model')(sequelize, DataTypes);
+db.users = require('./user.model')(sequelize, DataTypes);
+db.roles = require('./route.model')(sequelize, DataTypes);
 
 module.exports = db;
