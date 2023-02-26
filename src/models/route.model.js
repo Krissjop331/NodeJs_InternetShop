@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         name: {
             type: DataTypes.STRING,
-            defaultValue: "USER",
+            // defaultValue: "USER",
             unique: true
         }
     })

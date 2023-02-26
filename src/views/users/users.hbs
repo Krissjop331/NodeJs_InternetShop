@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все пользователи</title>
+</head>
+<body>
+    <h1>Все пользователи</h1>
+    <a href="/register">Добавить</a>
+
+    {{#if checkUser}}
+        <ul>
+        {{#each users}}
+            <li>{{this.email}}</li>
+            <p>{{this.password}}</p>
+            <img src="static/assets/tmp/{{this.image.name}}">
+        {{/each}}
+        </ul>
+
+
+    {{else}}
+        <h2>Данных нет</h2>
+    {{/if}}
+
+</body>
+</html>
+

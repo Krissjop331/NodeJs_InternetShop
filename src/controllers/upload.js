@@ -5,7 +5,7 @@ const Image = db.images;
 
 const uploadFiles = async (req, res, file) => {
   try {
-    // console.log(file);
+    console.log(file);
 
     if (file == undefined) {
       return res.send(`You must select a file.`);
@@ -15,6 +15,7 @@ const uploadFiles = async (req, res, file) => {
       type: file.mimetype,
       // name: "/resources/static/assets/uploads/" + file.originalname,
       name: file.originalname,
+      destination: file.destination,
       data: fs.readFileSync(
         __basedir + "/resources/static/assets/uploads/" + file.filename
       ),
@@ -23,10 +24,8 @@ const uploadFiles = async (req, res, file) => {
         __basedir + "/resources/static/assets/tmp/" + image.name,
         image.data
       );
-
-      return image
-
     });
+    return true;
   } catch (error) {
     console.log(error);
     return res.send(`Error when trying upload images: ${error}`);

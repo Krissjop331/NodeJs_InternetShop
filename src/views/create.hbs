@@ -28,7 +28,7 @@
         </form> --}}
 
         <form class="mt-4" action="/createProduct" method="POST" enctype="multipart/form-data">
-          <input type="hidden" value="{{imagesLength}}" name="imageId">
+          <input type="hidden" id="imageId" value="{{imagesLength}}" name="imageId">
           <div class="form-group">
             <input type="text" name="title" id="input-title" class="form-control border" />
           </div>
